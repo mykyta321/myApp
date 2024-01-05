@@ -11,6 +11,8 @@ public class Main {
    static Scanner SCANNER = new Scanner(System.in);
    static String EMAIL_PATTERN = "^[a-zA-z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
 
+   static String NAME_PATTERN = "[A-z-]{3,}";
+
     public static void main(String[] args) {
         run();
     }
@@ -56,13 +58,25 @@ public class Main {
     static Client buildClient(String email) {
         Client client = new Client();
         client.email = email;
+        Pattern compiledPattern = Pattern.compile(NAME_PATTERN);
 
         System.out.print("First name: ");
         client.firstName = SCANNER.nextLine();
-        System.out.print("Last name: ");
-        client.lastName = SCANNER.nextLine();
+        Matcher matcherF = compiledPattern.matcher(client.firstName);
+        if (matcherF.find()) {
+            System.out.print("Last name: ");
+            client.lastName = SCANNER.nextLine();
+            Matcher matcherL = compiledPattern.matcher(client.lastName);
+            if (matcherL.find()){
+                return client;
+            } else {
+                System.out.println("Lastname is invalid");
+            }
+        } else {
+            System.out.println("Name is invalid.");
+        }
 
-        return client;
+        return null;
     }
 
     static boolean isEmailValid(String email) {
