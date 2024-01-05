@@ -67,16 +67,14 @@ public class Main {
             System.out.print("Last name: ");
             client.lastName = SCANNER.nextLine();
             Matcher matcherL = compiledPattern.matcher(client.lastName);
-            if (matcherL.find()){
-                return client;
-            } else {
-                System.out.println("Lastname is invalid");
+            if (!matcherL.find()){
+                client.lastName = "Invalid lastname! Try again.";
             }
         } else {
-            System.out.println("Name is invalid.");
+            client.firstName = "Invalid name! Try Again.";
         }
 
-        return null;
+        return client;
     }
 
     static boolean isEmailValid(String email) {
