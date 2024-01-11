@@ -8,6 +8,24 @@ public class PetService {
 
     private static String DOG_TYPE = "dog";
 
+    public static boolean checkPetReg() {
+        boolean flag = false;
+        for (int i = 0; i < 3; i++) {
+            System.out.print("Do you want to register your pet? (yes / no): ");
+            String userInput = Main.SCANNER.nextLine();
+            if (userInput.equals("yes")) {
+                flag = true;
+                break;
+            } else if (userInput.equals("no")) {
+                break;
+            } else {
+                System.out.println("Invalid value. You have " + (2-i) + " attempts.");
+            }
+        }
+
+        return flag;
+    }
+
     public Pet registerNewPet() {
         Pet pet = new Pet();
         System.out.print("Type(dog / cat / other): ");

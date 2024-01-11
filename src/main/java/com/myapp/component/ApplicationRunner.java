@@ -15,12 +15,14 @@ public class ApplicationRunner {
             Client client = clientService.registerNewClient();   ;
 
             if (client != null) {
-                System.out.println("Adding a new pet.");
+                if (PetService.checkPetReg()) {
+                    System.out.println("Adding a new pet.");
 
-                Pet pet = petService.registerNewPet();
-                client.setPet(pet);
-                pet.setOwnerName(client.getFirstName() + " " + client.getLastName());
-                System.out.println("Pet has been added.");
+                    Pet pet = petService.registerNewPet();
+                    client.setPet(pet);
+                    pet.setOwnerName(client.getFirstName() + " " + client.getLastName());
+                    System.out.println("Pet has been added.");
+                }
             }
         }
     }
