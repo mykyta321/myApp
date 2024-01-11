@@ -12,7 +12,7 @@ public class ApplicationRunner {
 
     public void run() {
         if (Authenticator.auth()) {
-            Client client = clientService.registerNewClient();   ;
+            Client client = clientService.registerNewClient();
 
             if (client != null) {
                 if (PetService.checkPetReg()) {

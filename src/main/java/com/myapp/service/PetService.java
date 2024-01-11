@@ -6,7 +6,7 @@ import main.java.com.myapp.model.Pet;
 
 public class PetService {
 
-    private static String DOG_TYPE = "dog";
+    private final static String DOG_TYPE = "dog";
 
     public static boolean checkPetReg() {
         boolean flag = false;
