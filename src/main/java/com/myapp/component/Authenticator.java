@@ -4,7 +4,7 @@ import main.java.com.myapp.Main;
 
 public class Authenticator {
 
-    private static String PASSWORD = "p";
+    private static final String PASSWORD = "p";
 
     public static boolean auth() {
         boolean accepted = false;

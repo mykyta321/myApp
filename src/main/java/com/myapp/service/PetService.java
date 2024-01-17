@@ -46,7 +46,7 @@ public class PetService {
         Dog dog = petToDog(pet);
 
         System.out.print("Size (xS / S / M / L / xxL): ");
-        dog.setSex(Main.SCANNER.nextLine());
+        dog.setSize(Main.SCANNER.nextLine());
 
         return dog;
     }
@@ -56,8 +56,9 @@ public class PetService {
         dog.setAge(pet.getAge());
         dog.setName(pet.getName());
         dog.setSex(pet.getSex());
+        dog.setType(pet.getType());
 
-        return dog;
+    return dog;
     }
 
     private Pet buildPet(String type) {
@@ -71,7 +72,7 @@ public class PetService {
         pet.setName(Main.SCANNER.nextLine());
 
         System.out.print("Sex (male / female): ");
-        pet.setName(Main.SCANNER.nextLine());
+        pet.setSex(Main.SCANNER.nextLine());
 
         return pet;
     }
