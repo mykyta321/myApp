@@ -11,18 +11,18 @@ public class Sandbox {
     public static void main(String[] args) {
 
         Dog[] dogs = {
-                new Dog(Dog.M),
-                new Dog(Dog.S),
-                new Dog(Dog.XL),
-                new Dog(Dog.XL),
-                new Dog(Dog.XS),
-                new Dog(Dog.S)
+                new Dog(Dog.M, "4"),
+                new Dog(Dog.S, "1"),
+                new Dog(Dog.XL, "6"),
+                new Dog(Dog.XL, "2"),
+                new Dog(Dog.XS, "3"),
+                new Dog(Dog.S, "5")
         };
 
         Arrays.sort(dogs, new DogSizeComparator());
 
         for (Dog dog : dogs) {
-            System.out.println(dog.getSize());
+            System.out.println(dog.getSize() + "\t" + dog.getAge());
         }
     }
 

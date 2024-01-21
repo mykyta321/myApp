@@ -8,7 +8,9 @@ public class DogSizeComparator implements Comparator<Dog> {
 
     @Override
     public int compare(Dog dog1, Dog dog2) {
-        return convertSize(dog1.getSize()) - convertSize(dog2.getSize());
+        int dogSizeCompare = convertSize(dog1.getSize()) - convertSize(dog2.getSize());
+        int dogAgeCompare = dog1.getAge().compareTo(dog2.getAge());
+        return (dogSizeCompare == 0) ? dogAgeCompare : dogSizeCompare;
     }
 
     private static int convertSize(String size) {
