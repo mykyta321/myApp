@@ -1,12 +1,16 @@
 package main.java.com.myapp.model;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 public class Client {
+    static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("dd MMM yyyy | hh:mm a");
    private String firstName;
    private String lastName;
    private String email;
    private Pet pet;
+   private final LocalDateTime registrationDate = LocalDateTime.now();
 
    @Override
    public String toString() {
@@ -14,6 +18,7 @@ public class Client {
                + "\n\tfirstname: " + firstName
                + ",  lastname: " + lastName
                + ", email: " + email
+               + "\nRegistration date: " + registrationDate.format(FORMATTER)
                + "\nPet:\n\t" + pet;
    }
 
