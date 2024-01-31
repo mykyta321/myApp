@@ -68,6 +68,31 @@ public abstract class Pet {
         return healthState;
     }
 
+    @Override
+    public String toString() {
+        return  "type: " + type
+                + ", sex: " + sex
+                + ", age: " + age
+                + ", name: " + name
+                + ", owner name: " + ownerName;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || obj.getClass() != this.getClass()) return false;
+        Pet pet = (Pet) obj;
+        return Objects.equals(type, pet.type)
+                && Objects.equals(sex, pet.sex)
+                && Objects.equals(age, pet.age)
+                && Objects.equals(name, pet.name)
+                && Objects.equals(ownerName, pet.ownerName);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, sex, age, name, ownerName);
+    }
+
     public String getType() {
         return type;
     }

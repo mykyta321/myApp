@@ -3,7 +3,7 @@ package main.java.com.myapp.model;
 import java.util.Objects;
 
 public class Dog extends Pet{
-
+  
     private Size size;
 
     public Dog () { };
@@ -15,6 +15,7 @@ public class Dog extends Pet{
         this.setAge(age);
     }
     public Dog(Size size, String age, HealthState healthState) {
+
         this.size = size;
         this.setAge(age);
         this.setHealthState(healthState);
