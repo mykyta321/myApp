@@ -21,6 +21,15 @@ public class Dog extends Pet{
         this.setHealthState(healthState);
     }
 
+    public Dog () { };
+    public Dog(String size) {
+        this.size = size;
+    }
+    public Dog(String size, String age) {
+        this.size = size;
+        this.setAge(age);
+    }
+
     @Override
     public String toString() {
         return super.toString().concat(", size: " + size);
