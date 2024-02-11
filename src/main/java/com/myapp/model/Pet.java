@@ -15,17 +15,16 @@ public abstract class Pet {
     private String name;
     private String ownerName;
     private HealthState healthState;
-    private final LocalDateTime registrationTime = LocalDateTime.now();
+    final LocalDateTime registrationTime = LocalDateTime.now();
 
     @Override
     public String toString() {
-        return  "type: " + type
+        return  "\n\ttype: " + type
                 + ", sex: " + sex
                 + ", age: " + age
                 + ", name: " + name
                 + ", owner name: " + ownerName
-                + ", health state: " + healthState
-                + "\n Registration time: " + registrationTime.format(FORMATTER);
+                + ", health state: " + healthState;
     }
 
     @Override

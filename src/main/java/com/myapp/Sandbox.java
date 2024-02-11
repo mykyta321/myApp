@@ -4,7 +4,6 @@ import main.java.com.myapp.model.Client;
 import main.java.com.myapp.model.Dog;
 import main.java.com.myapp.model.Pet;
 
-import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.function.DoubleFunction;
