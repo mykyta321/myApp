@@ -56,6 +56,9 @@ public class PetService {
         System.out.print("Sex (male / female): ");
         pet.setSex(Main.SCANNER.nextLine());
 
+        System.out.print("Health state (CRITICAL/MODERATE/NORMAL): ");
+        pet.setHealthState(Pet.HealthState.valueOf(Main.SCANNER.nextLine()));
+
         if (type.equals(DOG_TYPE)) {
             System.out.print("Size (XS / S / M / L / XL): ");
             String size = Main.SCANNER.nextLine();

@@ -22,7 +22,7 @@ public class Dog extends Pet{
 
     @Override
     public String toString() {
-        return super.toString().concat(", size: " + size).concat("\nRegistration time: " + registrationTime.format(FORMATTER) + "\n");
+        return super.toString().concat(", size: " + size).concat("\nRegistration time: " + registrationTime.format(FORMATTER) + "\n\t   ");
     }
 
     @Override
@@ -53,8 +53,7 @@ public class Dog extends Pet{
         M(3),
         L(4),
         XL(5),
-        UNKNOWN(0)
-        ;
+        UNKNOWN(0);
 
         private final int value;
 

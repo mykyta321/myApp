@@ -44,10 +44,10 @@ public abstract class Pet {
     }
 
     public enum HealthState {
-        CRITICAL(1),
+        CRITICAL(0),
+        UNKNOWN(1),
         MODERATE(2),
-        NORMAL(3),
-        UNKNOWN(0);
+        NORMAL(3);
 
         private final int value;
 
