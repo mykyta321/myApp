@@ -15,17 +15,16 @@ public abstract class Pet {
     private String name;
     private String ownerName;
     private HealthState healthState;
-    private final LocalDateTime registrationTime = LocalDateTime.now();
+    final LocalDateTime registrationTime = LocalDateTime.now();
 
     @Override
     public String toString() {
-        return  "type: " + type
-                + ", sex: " + sex
-                + ", age: " + age
-                + ", name: " + name
-                + ", owner name: " + ownerName
-                + ", health state: " + healthState
-                + "\n Registration time: " + registrationTime.format(FORMATTER);
+        return  "\n\ttype= " + type
+                + ", sex= " + sex
+                + ", age= " + age
+                + ", name= " + name
+                + ", owner name= " + ownerName
+                + ", health state= " + healthState;
     }
 
     @Override
@@ -45,10 +44,10 @@ public abstract class Pet {
     }
 
     public enum HealthState {
-        CRITICAL(1),
+        CRITICAL(0),
+        UNKNOWN(1),
         MODERATE(2),
-        NORMAL(3),
-        UNKNOWN(0);
+        NORMAL(3);
 
         private final int value;
 
@@ -66,31 +65,6 @@ public abstract class Pet {
 
     public HealthState getHealthState() {
         return healthState;
-    }
-
-    @Override
-    public String toString() {
-        return  "type: " + type
-                + ", sex: " + sex
-                + ", age: " + age
-                + ", name: " + name
-                + ", owner name: " + ownerName;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || obj.getClass() != this.getClass()) return false;
-        Pet pet = (Pet) obj;
-        return Objects.equals(type, pet.type)
-                && Objects.equals(sex, pet.sex)
-                && Objects.equals(age, pet.age)
-                && Objects.equals(name, pet.name)
-                && Objects.equals(ownerName, pet.ownerName);
-    }
-    @Override
-    public int hashCode() {
-        return Objects.hash(type, sex, age, name, ownerName);
     }
 
     public String getType() {

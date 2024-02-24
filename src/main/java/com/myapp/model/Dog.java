@@ -3,7 +3,7 @@ package main.java.com.myapp.model;
 import java.util.Objects;
 
 public class Dog extends Pet{
-  
+
     private Size size;
 
     public Dog () { };
@@ -15,24 +15,14 @@ public class Dog extends Pet{
         this.setAge(age);
     }
     public Dog(Size size, String age, HealthState healthState) {
-
         this.size = size;
         this.setAge(age);
         this.setHealthState(healthState);
     }
 
-    public Dog () { };
-    public Dog(String size) {
-        this.size = size;
-    }
-    public Dog(String size, String age) {
-        this.size = size;
-        this.setAge(age);
-    }
-
     @Override
     public String toString() {
-        return super.toString().concat(", size: " + size);
+        return super.toString().concat(", size= " + size).concat("\nRegistration time: " + registrationTime.format(FORMATTER) + "\n\t   ");
     }
 
     @Override
@@ -63,8 +53,8 @@ public class Dog extends Pet{
         M(3),
         L(4),
         XL(5),
-        UNKNOWN(0)
-        ;
+        UNKNOWN(0);
+
 
         private final int value;
 

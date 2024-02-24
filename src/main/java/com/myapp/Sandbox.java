@@ -1,5 +1,4 @@
 package main.java.com.myapp;
-
 import main.java.com.myapp.model.Cat;
 import main.java.com.myapp.model.Client;
 import main.java.com.myapp.model.Dog;

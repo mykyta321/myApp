@@ -14,7 +14,7 @@ public class PetService {
         boolean flag = false;
         for (int i = 0; i < 3; i++) {
             System.out.print("Do you want to register your pet? (yes / no): ");
-            String userInput = Main.SCANNER.nextLine();
+            String userInput = Main.SCANNER.nextLine().toLowerCase();
             if (userInput.equals("yes")) {
                 flag = true;
                 break;
@@ -32,7 +32,7 @@ public class PetService {
         Pet pet = null;
         System.out.print("Type(dog / cat): ");
 
-        String type = Main.SCANNER.nextLine();
+        String type = Main.SCANNER.nextLine().toLowerCase();
 
         if (DOG_TYPE.equals(type) || CAT_TYPE.equals(type)) {
             pet = buildPet(type);
@@ -54,14 +54,17 @@ public class PetService {
         pet.setName(Main.SCANNER.nextLine());
 
         System.out.print("Sex (male / female): ");
-        pet.setSex(Main.SCANNER.nextLine());
+        pet.setSex(Main.SCANNER.nextLine().toLowerCase());
+
+        System.out.print("Health state (CRITICAL/MODERATE/NORMAL): ");
+        pet.setHealthState(Pet.HealthState.valueOf(Main.SCANNER.nextLine().toUpperCase()));
 
         if (type.equals(DOG_TYPE)) {
-            System.out.println("Size (XS / S / M / L / XL): ");
-            String size = Main.SCANNER.nextLine();
+            System.out.print("Size (XS / S / M / L / XL): ");
+            String size = Main.SCANNER.nextLine().toUpperCase();
             ((Dog) pet).setSize(Dog.Size.valueOf(size));
-      }
-      
+        }
+
         return pet;
     }
 }
