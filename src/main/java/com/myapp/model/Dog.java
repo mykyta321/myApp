@@ -55,6 +55,7 @@ public class Dog extends Pet{
         XL(5),
         UNKNOWN(0);
 
+
         private final int value;
 
         Size(int value) {

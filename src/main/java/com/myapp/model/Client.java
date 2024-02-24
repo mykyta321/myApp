@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+
 import java.util.Objects;
 
 public class Client {
@@ -25,6 +26,7 @@ public class Client {
                + ". Registration date: " + registrationDate.format(FORMATTER)
                + "\n Pets: " + pets
                + "\n}";
+
    }
 
     @Override
