@@ -18,10 +18,10 @@ public class Client {
    @Override
    public String toString() {
        return "Client {"
-               + "\n\tfirstname: " + firstName
-               + ",  lastname: " + lastName
-               + ", email: " + email
-               + ", location: " + location
+               + "\n\tfirstname= " + firstName
+               + ",  lastname= " + lastName
+               + ", email= " + email
+               + ", location= " + location
                + ". Registration date: " + registrationDate.format(FORMATTER)
                + "\n Pets: " + pets
                + "\n}";

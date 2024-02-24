@@ -49,7 +49,7 @@ public class ClientService {
             client.setFirstName("Invalid name! Try Again.");
         }
         System.out.print("Location: ");
-        String location = Main.SCANNER.nextLine();
+        String location = Main.SCANNER.nextLine().toUpperCase();
         client.setLocation(Client.Location.valueOf(location));
 
         return client;

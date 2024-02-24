@@ -19,12 +19,12 @@ public abstract class Pet {
 
     @Override
     public String toString() {
-        return  "\n\ttype: " + type
-                + ", sex: " + sex
-                + ", age: " + age
-                + ", name: " + name
-                + ", owner name: " + ownerName
-                + ", health state: " + healthState;
+        return  "\n\ttype= " + type
+                + ", sex= " + sex
+                + ", age= " + age
+                + ", name= " + name
+                + ", owner name= " + ownerName
+                + ", health state= " + healthState;
     }
 
     @Override

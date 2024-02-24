@@ -95,7 +95,7 @@ public class EntityRegister {
     private boolean verifyRepeating(String message) {
         System.out.println(message);
 
-        String answer = Main.SCANNER.nextLine();
+        String answer = Main.SCANNER.nextLine().toLowerCase();
         if("y".equals(answer)) {
             return true;
         } else if ("n".equals(answer)) {
