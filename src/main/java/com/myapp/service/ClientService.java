@@ -48,6 +48,9 @@ public class ClientService {
         } else {
             client.setFirstName("Invalid name! Try Again.");
         }
+        System.out.print("Location: ");
+        String location = Main.SCANNER.nextLine();
+        client.setLocation(Client.Location.valueOf(location));
 
         return client;
     }
