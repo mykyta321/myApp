@@ -51,6 +51,17 @@ public abstract class Pet {
 
         private final int value;
 
+        public static HealthState isUnknown(String value){
+            for (HealthState hS : values()) {
+                if (hS.toString().equals(value)) {
+                    return hS;
+                }
+            }
+            System.out.println("Unable to parse value '" + value
+                    + "'. Using default value: " + UNKNOWN);
+            return UNKNOWN;
+        }
+
         HealthState(int value) {
             this.value = value;
         }

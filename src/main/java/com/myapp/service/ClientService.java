@@ -50,7 +50,7 @@ public class ClientService {
         }
         System.out.print("Location: ");
         String location = Main.SCANNER.nextLine().toUpperCase();
-        client.setLocation(Client.Location.valueOf(location));
+        client.setLocation(Client.Location.isUnknown(location));
 
         return client;
     }
